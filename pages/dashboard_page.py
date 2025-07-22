@@ -8,7 +8,6 @@ class DashboardPage(BasePage):
 
         self.dashboard_title = page.get_by_test_id('dashboard-toolbar-title-text')
 
-    def should_be_dashboard_page(self):
-        expect(self.page).to_have_url("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/dashboard")
+    def check_visible_dashboard_title(self):
         expect(self.dashboard_title).to_be_visible()
         expect(self.dashboard_title).to_have_text('Dashboard')

@@ -10,6 +10,7 @@ class RegistrationPage(BasePage):
         self.username_input = page.get_by_test_id('registration-form-username-input').locator('input')
         self.password_input = page.get_by_test_id('registration-form-password-input').locator('input')
         self.registration_button = page.get_by_test_id('registration-page-registration-button')
+        self.login_link = page.get_by_test_id('registration-page-login-link')
 
     def navigate(self):
         self.page.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration")
