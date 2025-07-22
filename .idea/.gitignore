@@ -7,3 +7,11 @@
 /dataSources/
 /dataSources.local.xml
 .idea
+.json
+.xml
+.iml
+.gitignore
+/__pycache__/
+__pycache__
+__init__.py
+.ini
