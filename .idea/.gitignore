@@ -11,4 +11,6 @@
 .xml
 .iml
 .gitignore
-/_pycache_/
+/__pycache__/
+__init__.py
+.ini
