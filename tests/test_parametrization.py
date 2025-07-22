@@ -15,3 +15,15 @@ def test_numbers(number: int):
 )
 def test_several_numbers(number: int, expected: int):
     assert number ** 2 == expected
+
+
+@pytest.mark.parametrize(
+    "os",
+    ["macos", "windows", "linux", "debian"]
+)
+@pytest.mark.parametrize(
+    "browser",
+    ["chromium", "webkit", "firefox"]
+)
+def test_multiplication_of_numbers(os: str, browser: str):
+    assert len(os + browser) > 0
