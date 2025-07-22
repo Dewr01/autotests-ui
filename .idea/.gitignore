@@ -8,3 +8,7 @@
 /dataSources.local.xml
 .idea
 .json
+.xml
+.iml
+.gitignore
+/_pycache_/
