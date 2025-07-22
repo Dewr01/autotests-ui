@@ -27,7 +27,3 @@ class RegistrationPage(BasePage):
 
     def click_registration_button(self):
         self.registration_button.click()
-
-    def should_be_registration_page(self):
-        expect(self.page).to_have_url(
-            "https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration")
