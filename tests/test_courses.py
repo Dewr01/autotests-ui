@@ -1,6 +1,9 @@
 import pytest
 from playwright.sync_api import expect, Page
 
+from pages.courses_list_page import CoursesListPage
+from pages.create_course_page import CreateCoursePage
+
 
 @pytest.mark.courses
 @pytest.mark.regression
@@ -30,7 +33,7 @@ def test_empty_courses_list(chromium_page_with_state: Page):
 
 @pytest.mark.courses
 @pytest.mark.regression
-def test_create_course(create_course_page, courses_list_page):
+def test_create_course(courses_list_page: CoursesListPage, create_course_page: CreateCoursePage):
     # Шаг 1: Открыть страницу
     create_course_page.open()
 
