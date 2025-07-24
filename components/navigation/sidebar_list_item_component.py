@@ -1,3 +1,4 @@
+# sidebar_list_item_component.py
 from typing import Pattern
 
 from playwright.sync_api import Page, expect
@@ -24,4 +25,3 @@ class SidebarListItemComponent(BaseComponent):
     def navigate(self, expected_url: Pattern[str]):
         self.button.click()
         self.check_current_url(expected_url)
-        
