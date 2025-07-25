@@ -1,6 +1,4 @@
 import pytest
-from playwright.sync_api import expect
-
 from pages.registration_page import RegistrationPage
 from pages.dashboard_page import DashboardPage
 
@@ -8,9 +6,11 @@ from pages.dashboard_page import DashboardPage
 @pytest.mark.regression
 @pytest.mark.registration
 def test_successful_registration(registration_page: RegistrationPage, dashboard_page: DashboardPage):
-
     registration_page.navigate()
-    registration_page.fill_registration_form(email="username@gmail.com", username="tester", password="password")
+    registration_page.fill_registration_form(
+        email="username@gmail.com",
+        username="tester",
+        password="password"
+    )
     registration_page.click_registration_button()
-
-    dashboard_page.check_visible_dashboard_title()
+    dashboard_page.dashboard_title.check_visible()
