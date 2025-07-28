@@ -30,7 +30,7 @@ class CreateCourseFormComponent(BaseComponent):
         self.time_input.check_visible()
         self.time_input.check_have_value(estimated_time)
         self.description_input.check_visible()
-        self.description_input.check_value(description)
+        self.description_input.check_have_text(description)
         self.max_score_input.check_visible()
         self.max_score_input.check_have_value(max_score)
         self.min_score_input.check_visible()
