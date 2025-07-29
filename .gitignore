@@ -1,0 +1,46 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+# Editor-based HTTP Client requests
+/httpRequests/
+
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# pycharm
+.idea
+
+# python
+.venv
+__pycache__
+*.ini
+*.env
+
+# allure
+allure-results
+allure-report
+
+# testing artifacts
+*.html
+*.json
+videos
+tracing
+*.xml
+*.iml
+.gitignore
+__init__.py
+
+# Дополнения для Python
+*.log
+*.sqlite3
+*.db
+
+# Дополнения для тестов и кэша
+.pytest_cache/
+.coverage
+
+# Системные файлы
+.DS_Store (Mac)
+Thumbs.db (Windows)
