@@ -29,7 +29,6 @@ videos
 tracing
 *.xml
 *.iml
-.gitignore
 __init__.py
 
 # Дополнения для Python
