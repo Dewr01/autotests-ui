@@ -31,15 +31,24 @@ jobs:
         run: |
           pytest -m regression --alluredir=allure-results --numprocesses 2
 
-      - name: Upload Allure results
-        uses: actions/upload-artifact@v4
-        if: always()
+      - name: Upload Allure results as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-results
+          path: allure-results/
+
+  publish-report:
+    needs: run-tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Allure results artifact
+        uses: actions/download-artifact@v3
         with:
           name: allure-results
           path: allure-results
-          retention-days: 1
 
-      - name: Checkout gh-pages for history
+      - name: Get Allure history
         uses: actions/checkout@v4
         if: always()
         continue-on-error: true
@@ -47,38 +56,7 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
-      - name: Upload Allure history if exists
-        if: always() && steps.checkout-history.outcome == 'success'
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-history
-          path: gh-pages/allure-history
-          retention-days: 1
-
-  publish-report:
-    needs: run-tests
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Download Allure results
-        uses: actions/download-artifact@v4
-        with:
-          name: allure-results
-          path: allure-results
-
-      - name: Download Allure history if exists
-        id: download-history
-        uses: actions/download-artifact@v4
-        continue-on-error: true
-        with:
-          name: allure-history
-          path: allure-history
-
-      - name: Create empty history directory if needed
-        if: steps.download-history.outcome != 'success'
-        run: mkdir -p allure-history
-
-      - name: Generate Allure Report
+      - name: Generates Allure Report with history
         uses: simple-elf/allure-report-action@v1.7
         if: always()
         with:
@@ -86,8 +64,8 @@ jobs:
           allure_history: allure-history
 
       - name: Deploy report to Github Pages
-        uses: peaceiris/actions-gh-pages@v4
         if: always()
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
