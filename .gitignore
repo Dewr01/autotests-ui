@@ -43,3 +43,11 @@ __init__.py
 # Системные файлы
 .DS_Store (Mac)
 Thumbs.db (Windows)
+
+# coverage
+coverage.html
+coverage-results
+coverage-report.json
+coverage-history.json
+
+.DS_Store
