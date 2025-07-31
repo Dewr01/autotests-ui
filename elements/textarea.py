@@ -5,7 +5,7 @@ from ui_coverage_tool import ActionType
 from elements.base_element import BaseElement
 from tools.logger import get_logger
 
-logger = get_logger("BASE_ELEMENT")
+logger = get_logger("TEXTAREA")
 
 
 class Textarea(BaseElement):
@@ -17,7 +17,7 @@ class Textarea(BaseElement):
         return super().get_locator(nth, **kwargs).locator('textarea').first
 
     def get_raw_locator(self, nth: int = 0, **kwargs) -> str:
-        return f'{super().get_raw_locator(**kwargs)}//textarea'
+        return f'{super().get_raw_locator(**kwargs)}//textarea[1]'
 
     def fill(self, value: str, nth: int = 0, **kwargs):
         step = f'Fill {self.type_of} "{self.name}" to value "{value}"'
