@@ -8,6 +8,10 @@
       <excludeFolder url="file://$MODULE_DIR$/tools/allure/tracing" />
       <excludeFolder url="file://$MODULE_DIR$/tools/allure/videos" />
       <excludeFolder url="file://$MODULE_DIR$/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/allure-results" />
+      <excludeFolder url="file://$MODULE_DIR$/coverage-results" />
+      <excludeFolder url="file://$MODULE_DIR$/tracing" />
+      <excludeFolder url="file://$MODULE_DIR$/videos" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
